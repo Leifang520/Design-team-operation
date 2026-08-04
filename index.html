@@ -227,11 +227,191 @@
       margin-top: 120px; padding-top: 32px; border-top: 1px solid #e5e5e0;
       font-size: 12px; color: #aaa; text-align: center;
     }
+
+    /* ════════════════════════════════
+       TAB SYSTEM
+    ════════════════════════════════ */
+    .tab-bar {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(247,247,245,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e5e0;
+      padding: 0 40px;
+      display: flex; gap: 0;
+    }
+    .tab-btn {
+      padding: 15px 22px;
+      font-size: 13px; font-weight: 500; color: #888;
+      background: none; border: none; border-bottom: 2px solid transparent;
+      cursor: pointer; transition: color .15s, border-color .15s;
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: #1a1a1a; }
+    .tab-btn.active { color: #1a1a1a; border-bottom-color: #1a1a1a; font-weight: 600; }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* report nav only shows in report tab */
+    #reportNav { display: block; }
+
+    /* ════════════════════════════════
+       IDEATION TAB STYLES
+    ════════════════════════════════ */
+    .ideation-page { max-width: 1080px; margin: 0 auto; padding: 72px 40px 120px; }
+
+    .ideation-hero { margin-bottom: 72px; }
+    .ideation-hero h1 { font-size: 48px; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; color: #111; }
+    .ideation-hero p { margin-top: 14px; font-size: 17px; color: #555; max-width: 580px; }
+
+    /* Section label */
+    .i-section-label {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 28px; padding: 24px 28px;
+      border-radius: 16px;
+    }
+    .i-section-label.goal   { background: #eff6ff; border: 1px solid #bfdbfe; }
+    .i-section-label.growth { background: #f0fdf4; border: 1px solid #bbf7d0; }
+    .i-section-emoji { font-size: 28px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+    .i-section-title {
+      font-size: 22px; font-weight: 700; letter-spacing: -.01em; color: #111; line-height: 1.2;
+    }
+    .i-section-sub {
+      margin-top: 5px; font-size: 14px; color: #555; line-height: 1.55;
+    }
+
+    /* Block cards within each column */
+    .i-block {
+      background: #fff; border: 1px solid #e8e8e3; border-radius: 16px;
+      overflow: hidden; margin-bottom: 20px;
+    }
+    .i-block-head {
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid #f0f0eb;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .i-block-head h3 {
+      font-size: 14px; font-weight: 700; color: #111; letter-spacing: -.01em;
+    }
+    .i-block-icon {
+      width: 28px; height: 28px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; flex-shrink: 0;
+    }
+    .i-block-icon.blue   { background: #eff6ff; }
+    .i-block-icon.green  { background: #f0fdf4; }
+    .i-block-icon.orange { background: #fff7ed; }
+    .i-block-icon.purple { background: #faf5ff; }
+
+    .i-block-body { padding: 18px 22px; }
+
+    /* Doing list */
+    .doing-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .doing-list li {
+      font-size: 13px; color: #444; line-height: 1.5;
+      padding-left: 18px; position: relative;
+    }
+    .doing-list li::before {
+      content: "✓"; position: absolute; left: 0;
+      color: #16a34a; font-weight: 700; font-size: 11px; top: 2px;
+    }
+
+    /* Pattern table */
+    .pattern-table { width: 100%; border-collapse: collapse; }
+    .pattern-table th {
+      font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+      color: #aaa; padding: 0 0 10px; text-align: left;
+    }
+    .pattern-table td {
+      font-size: 13px; color: #333; padding: 10px 12px 10px 0;
+      border-top: 1px solid #f0f0eb; vertical-align: top; line-height: 1.5;
+    }
+    .pattern-table td:first-child { font-weight: 600; color: #111; width: 44%; }
+
+    /* Idea pills */
+    .idea-list { display: flex; flex-direction: column; gap: 10px; }
+    .idea-item {
+      background: #f9f9f7; border: 1px solid #ebebE6; border-radius: 10px;
+      padding: 12px 14px; font-size: 13px; color: #333; line-height: 1.5;
+    }
+    .idea-item strong { color: #111; display: block; margin-bottom: 2px; font-size: 13px; }
+
+    /* Manager action list */
+    .action-list { display: flex; flex-direction: column; gap: 8px; }
+    .action-item {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 13px; color: #333; line-height: 1.5;
+    }
+    .action-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 6px;
+    }
+    .action-dot.blue  { background: #3b82f6; }
+    .action-dot.green { background: #10b981; }
+
+    /* ── Highlighted action block ── */
+    .i-action-block {
+      border-radius: 16px; overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .i-action-block.goal   { border: 2px solid #93c5fd; }
+    .i-action-block.growth { border: 2px solid #6ee7b7; }
+
+    .i-action-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 22px;
+    }
+    .i-action-block.goal   .i-action-header { background: #1d4ed8; }
+    .i-action-block.growth .i-action-header { background: #059669; }
+
+    .i-action-icon {
+      font-size: 13px; color: rgba(255,255,255,0.7); flex-shrink: 0;
+    }
+    .i-action-title {
+      font-size: 13px; font-weight: 700; letter-spacing: .02em;
+      text-transform: uppercase; color: #fff;
+    }
+
+    .i-action-body {
+      display: flex; flex-direction: column; gap: 0;
+      padding: 8px 0;
+    }
+    .i-action-block.goal   .i-action-body { background: #eff6ff; }
+    .i-action-block.growth .i-action-body { background: #f0fdf4; }
+
+    .i-action-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: 13.5px; color: #1a1a1a; line-height: 1.55;
+      padding: 11px 22px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .i-action-item:last-child { border-bottom: none; }
+    .i-action-item strong { color: #111; }
+
+    .i-action-bullet {
+      width: 7px; height: 7px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 6px;
+    }
+    .i-action-bullet.goal   { background: #1d4ed8; }
+    .i-action-bullet.growth { background: #059669; }
+
+    /* (split summary removed) */
   </style>
 </head>
 <body>
 
-<nav>
+<!-- Top-level tab switcher -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('report', this)">📊 Peakon Report</button>
+  <button class="tab-btn" onclick="switchTab('ideation', this)">💡 Workshop Ideation</button>
+</div>
+
+<!-- ══════════════════════════════════════
+     PANEL 1 — original report (untouched)
+══════════════════════════════════════ -->
+<div id="panel-report" class="tab-panel active">
+
+<nav id="reportNav">
   <ul>
     <li><a href="#snapshot">Snapshot</a></li>
     <li><a href="#scores">Driver Scores</a></li>
@@ -987,6 +1167,288 @@
   </footer>
 
 </div>
+
+</div><!-- /panel-report -->
+
+
+<!-- ══════════════════════════════════════
+     PANEL 2 — Workshop Ideation
+══════════════════════════════════════ -->
+<div id="panel-ideation" class="tab-panel">
+<div class="ideation-page">
+
+  <div class="ideation-hero">
+    <span class="eyebrow">Peakon · Workshop · H1 2026</span>
+    <h1>Workshop Ideation</h1>
+    <p>Goal Setting and Growth &amp; Learning — what the team shared, what's blocking progress, and what managers can do next.</p>
+  </div>
+
+  <!-- ══════════════════════
+       SECTION 1 — GOAL SETTING
+  ══════════════════════ -->
+  <div class="i-section-label goal">
+    <span class="i-section-emoji">🎯</span>
+    <div>
+      <div class="i-section-title">Goal Setting</div>
+      <div class="i-section-sub">Career growth inside Delivery Hero — performance conversations, growth goals, promotion clarity.</div>
+    </div>
+  </div>
+
+  <div class="i-block">
+    <div class="i-block-head">
+      <div class="i-block-icon blue">✓</div>
+      <h3>What we're already doing</h3>
+    </div>
+    <div class="i-block-body">
+      <ul class="doing-list">
+        <li>Individual growth plans with DH templates; cadence agreed between manager &amp; designer</li>
+        <li>Expectation conversations covering role, half-year targets, quarterly focus</li>
+        <li>Team OKRs — Design, Research, Deliveries (Rider team goal by Momo in progress)</li>
+        <li>Career frameworks in flight: AI designer (Rona + leadership), UXW (Rona), Design Systems (Enda/Murat/Lucas — needs follow-up)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="i-block">
+    <div class="i-block-head">
+      <div class="i-block-icon blue">👁</div>
+      <h3>What success looks like — team input</h3>
+    </div>
+    <div class="i-block-body">
+      <table class="pattern-table">
+        <tr><th>Theme</th><th>What they said</th></tr>
+        <tr><td>Clarity on trajectory</td><td>Tangible, incremental short-term goals building toward a long-term career vision — no ambiguity on current placement</td></tr>
+        <tr><td>No EOY surprises</td><td>"My review should be the result of a plan we executed — not a shock"</td></tr>
+        <tr><td>Goal stability</td><td>Goals should stay relevant even when business priorities shift fast</td></tr>
+        <tr><td>Skill visibility</td><td>A skill tree showing where I excel and where I'm weak — makes goal-setting easier</td></tr>
+        <tr><td>Transparent advancement</td><td>Clear understanding of what "above performing" looks like; what it takes to be a promotion candidate</td></tr>
+        <tr><td>Business impact link</td><td>"I can see a line between my design work and rider outcomes"</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="i-block">
+    <div class="i-block-head">
+      <div class="i-block-icon orange">⚠</div>
+      <h3>What's blocking us</h3>
+    </div>
+    <div class="i-block-body">
+      <table class="pattern-table">
+        <tr><th>Blocker</th><th>Root cause</th></tr>
+        <tr><td>No mid-cycle check-ins</td><td>Goals only looked at when it's too late to adjust</td></tr>
+        <tr><td>Evaluation feels subjective</td><td>Decisions made on side conversations &amp; perception, not documented evidence</td></tr>
+        <tr><td>Blurry expectations for seniors</td><td>Outcomes are ambiguous; tasks often self-assigned; no formal gap analysis</td></tr>
+        <tr><td>Promotion criteria invisible</td><td>Zero transparency on what "exceeding expectations" requires</td></tr>
+        <tr><td>Impact hard to quantify</td><td>Metrics not consistently available across squads</td></tr>
+        <tr><td>Tools applied halfway</td><td>"We have the tools but don't actually use them"</td></tr>
+        <tr><td>Tenure over contribution</td><td>Recognition tied to time in role, not what was delivered</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="i-block">
+    <div class="i-block-head">
+      <div class="i-block-icon purple">✦</div>
+      <h3>Ideas to make it better</h3>
+    </div>
+    <div class="i-block-body">
+      <div class="idea-list">
+        <div class="idea-item"><strong>Skill tree / gap analysis checklist</strong>Explicit criteria for each level; designers self-assess before review conversations.</div>
+        <div class="idea-item"><strong>6-week check-in rhythm</strong>Share progress, tweak goals — so nothing at EOY is a surprise.</div>
+        <div class="idea-item"><strong>Make promotion criteria public</strong>Write down what "exceeding expectations" looks like. Share it with every direct report.</div>
+        <div class="idea-item"><strong>Goal re-alignment ritual</strong>When context shifts mid-cycle, a formal trigger to revisit — not wait until EOY.</div>
+        <div class="idea-item"><strong>Impact tracking after ship</strong>Revisit metrics 4–6 weeks post-launch; no more "it ships and evaporates."</div>
+        <div class="idea-item"><strong>Pre-review evidence period</strong>Every individual can submit a documented case before evaluations are finalised.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Goal Setting — Manager Actions (highlighted) -->
+  <div class="i-action-block goal">
+    <div class="i-action-header">
+      <span class="i-action-icon">▶</span>
+      <span class="i-action-title">Manager Team Actions — Goal Setting</span>
+    </div>
+    <div class="i-action-body">
+      <div class="i-action-item">
+        <div class="i-action-bullet goal"></div>
+        <span>Run <strong>6-week check-ins</strong> — structured, recurring, not ad-hoc</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet goal"></div>
+        <span>Open <strong>expectation conversations at cycle start</strong> — role, half-year focus, quarterly priorities</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet goal"></div>
+        <span><strong>Publish levelling / promotion criteria</strong> for direct reports; remove the opacity</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet goal"></div>
+        <span><strong>Follow up on career framework status</strong> — UXW, Design Systems, AI roles all in flight and need owners</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet goal"></div>
+        <span>Create a <strong>shared place for impact evidence</strong> — designers log shipped work + metrics; reference in reviews</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet goal"></div>
+        <span><strong>Re-align goals</strong> when business context changes — don't let a stale goal drag to EOY</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════
+       SECTION 2 — GROWTH & LEARNING
+  ══════════════════════ -->
+  <div class="i-section-label growth" style="margin-top:72px;">
+    <span class="i-section-emoji">🌱</span>
+    <div>
+      <div class="i-section-title">Growth &amp; Learning</div>
+      <div class="i-section-sub">Craft growth as a designer — staying sharp, relevant, and inspired beyond day-to-day delivery.</div>
+    </div>
+  </div>
+
+  <div class="i-block">
+    <div class="i-block-head">
+      <div class="i-block-icon green">✓</div>
+      <h3>What we're already doing</h3>
+    </div>
+    <div class="i-block-body">
+      <ul class="doing-list">
+        <li>Mentorship Program piloting</li>
+        <li>Educational budget allocated</li>
+        <li>Design team weekly sharing sessions</li>
+        <li>AI learning tracks: AI Automation goal, DH AI expectations (role, H1 target, quarterly focus)</li>
+        <li>Logistic UX workstream — Connection &amp; Belonging pillar + Growth &amp; Development pillar (AI for Logistics sandboxes, pair-designing)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="i-block">
+    <div class="i-block-head">
+      <div class="i-block-icon green">👁</div>
+      <h3>Areas the team wants to grow in</h3>
+    </div>
+    <div class="i-block-body">
+      <table class="pattern-table">
+        <tr><th>Domain</th><th>Specific skills named</th></tr>
+        <tr><td>Influence &amp; strategy</td><td>Stakeholder management, storytelling/persuasion, gaining buy-in, moving from presence to driving outcomes</td></tr>
+        <tr><td>Strategic positioning</td><td>How design positions itself at decision tables; influencing product direction, not just executing it</td></tr>
+        <tr><td>AI × Design</td><td>Exploring design process powered by AI tools</td></tr>
+        <tr><td>AI × Engineering</td><td>Cross-functional collaboration with engineers on AI features</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="i-block">
+    <div class="i-block-head">
+      <div class="i-block-icon orange">⚠</div>
+      <h3>What's blocking growth</h3>
+    </div>
+    <div class="i-block-body">
+      <table class="pattern-table">
+        <tr><th>Blocker</th><th>What they said</th></tr>
+        <tr><td>No protected learning time</td><td>"Learning only happens in leftover time — it always loses to deadlines"</td></tr>
+        <tr><td>No team-wide strategy</td><td>Growth handled domain-by-domain — e.g. AI in Q2 was a sudden goal without balance</td></tr>
+        <tr><td>Delivery always wins</td><td>"The work and raw productivity overshadow the people and personal growth"</td></tr>
+        <tr><td>Learning sessions optional</td><td>Uneven participation — people who show up carry the weight; absentees still benefit</td></tr>
+        <tr><td>AI adoption chaotic</td><td>"Everyone building whatever — no guidelines, no mastery process; creates invisible workload"</td></tr>
+        <tr><td>Growth has nowhere to land</td><td>No consistent way to surface impact means growth-in-practice doesn't translate to recognition</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="i-block">
+    <div class="i-block-head">
+      <div class="i-block-icon green">🤝</div>
+      <h3>How we support each other — team ideas</h3>
+    </div>
+    <div class="i-block-body">
+      <table class="pattern-table">
+        <tr><th>Idea</th><th>Detail</th></tr>
+        <tr><td>Cross-squad pairing</td><td>Match designers from different squads for short feedback sessions — growth through conversation, not extra work</td></tr>
+        <tr><td>Team-owned learning</td><td>"When the team owns growth together, it gets protected; when it's individual, it gets sacrificed"</td></tr>
+        <tr><td>Reset crit expectations</td><td>Better attendance on Rider PL crits = more visibility, more holistic discussion</td></tr>
+        <tr><td>Shared accountability</td><td>Crits, reviews, learning sessions can't be optional — uneven participation undermines team growth</td></tr>
+        <tr><td>Quarterly learning showcase</td><td>Each person shares what they learned — as lightweight as a 5-min quarterly slot</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="i-block">
+    <div class="i-block-head">
+      <div class="i-block-icon purple">✦</div>
+      <h3>Ideas to make it better</h3>
+    </div>
+    <div class="i-block-body">
+      <div class="idea-list">
+        <div class="idea-item"><strong>Team-wide learning time block</strong>e.g. every Friday 3–4 PM, same for everyone; baked into quarterly planning.</div>
+        <div class="idea-item"><strong>Establish AI guidelines for the team</strong>Shared process for adoption — not "every person for themselves."</div>
+        <div class="idea-item"><strong>Make crits and learning sessions mandatory</strong>Frame them as team rituals, not optional extras.</div>
+        <div class="idea-item"><strong>Cross-squad designer pairing</strong>Quarterly rotation, short feedback sessions across workstreams.</div>
+        <div class="idea-item"><strong>Quarterly learning showcase</strong>Lightweight, public; ties learning time to team visibility.</div>
+        <div class="idea-item"><strong>Balanced team-wide growth strategy</strong>Not domain-by-domain or reactive to company priority shifts.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Growth & Learning — Manager Actions (highlighted) -->
+  <div class="i-action-block growth">
+    <div class="i-action-header">
+      <span class="i-action-icon">▶</span>
+      <span class="i-action-title">Manager Team Actions — Growth &amp; Learning</span>
+    </div>
+    <div class="i-action-body">
+      <div class="i-action-item">
+        <div class="i-action-bullet growth"></div>
+        <span><strong>Block team learning time in H2 planning</strong> — propose a shared protected slot before Q3 locks</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet growth"></div>
+        <span><strong>Check in bi-weekly on learning</strong> — what are you working on, how much time, any blockers</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet growth"></div>
+        <span><strong>Make crits non-optional</strong> — shared practices are team commitments; set the expectation clearly</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet growth"></div>
+        <span><strong>Facilitate cross-squad pairing</strong> — handle logistics so designers don't have to self-organise</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet growth"></div>
+        <span><strong>Run a quarterly learning showcase</strong> — model it yourself by sharing what you learned this quarter</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet growth"></div>
+        <span><strong>Define AI guidelines together</strong> — one team session in Q3; stop leaving adoption to individuals</span>
+      </div>
+      <div class="i-action-item">
+        <div class="i-action-bullet growth"></div>
+        <span><strong>Treat growth as a team metric</strong> — report on it in team reviews, not just individual 1:1s</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Logistics Design &amp; Research &nbsp;·&nbsp; Peakon H1 2026 Workshop Ideation &nbsp;·&nbsp; Internal use only
+  </footer>
+
+</div><!-- /ideation-page -->
+</div><!-- /panel-ideation -->
+
+<script>
+  function switchTab(tabName, btn) {
+    // Update buttons
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // Update panels
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + tabName).classList.add('active');
+    // Scroll to top on switch
+    window.scrollTo(0, 0);
+  }
+</script>
 
 <script>
   // Simple left-anchored bar chart. Map eNPS (−100..+100) to visual width %.
